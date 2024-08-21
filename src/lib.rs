@@ -109,6 +109,8 @@ pub async fn chrome() -> Result<WebDriver, Box<dyn std::error::Error>> {
     caps.set_disable_dev_shm_usage().unwrap();
     caps.add_chrome_arg("--disable-blink-features=AutomationControlled")
         .unwrap();
+    caps.add_chrome_arg("--disable-search-engine-choice-screen")
+        .unwrap();
     caps.add_chrome_arg("window-size=1920,1080").unwrap();
     caps.add_chrome_arg("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36").unwrap();
     caps.add_chrome_arg("disable-infobars").unwrap();
